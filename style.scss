@@ -1,0 +1,733 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+$width: 690px;
+
+/* & */
+
+.fullscreen{
+    background: url(./images/фон\ 1.png);
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+
+    &__sky{
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        width: 100%;
+        animation: sky 1.5s linear infinite alternate;
+    }
+    @keyframes sky{
+        0%{
+            transform: translateX(2.5px);
+        }
+        100%{
+            transform: translateX(-2px);
+        }
+    }
+    &__lefttrees{
+        position: absolute;
+        left: -300px;
+        top: 5px;
+        transform: scale(0.3);
+    }
+    &__leftbush{
+        position: absolute;
+        left: -5px;
+        bottom: 50px;
+        width: 80px;
+        z-index: 1;
+        animation: leftbush 1.3s linear infinite alternate;
+    }
+    @keyframes leftbush{
+        0%{
+            transform: rotateZ(-5deg);
+        }
+        100%{
+            transform: rotate(-2deg);
+        }
+    }
+    &__ambar{
+        position: absolute;
+        top: 140px;
+        left: -160px;
+        transform: scale(0.2);
+    }
+    &__horse{
+        position: absolute;
+        top: 110px;
+        transform: scale(0.2);
+        left: 165px;
+    }
+    &__rigthbushes{
+        position: absolute;
+        right: -139px;
+        top: -340px;
+        transform: scale(0.18);
+        animation: rigthbushes 2s linear infinite alternate;
+    }
+
+    &__birds{
+        position: absolute;
+        transform: scale(0.55) rotate(-5deg);
+        bottom: 230px;
+        left: 330px;
+    }
+}
+.header{
+    max-width: $width;
+    margin: 0px auto;
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__nav{
+        width: 427px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 20px;
+    }
+    &__logo{
+        width: 90px;
+        transition: 0.5s;
+        margin-right: 85px;
+        margin-bottom: 10px;
+    }
+    &__logo:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    &__link{
+        font-family: Roboto;
+        font-size: 8px;
+        font-weight: 400;
+        line-height: normal;
+        text-align: right;
+        color: #202020;
+        text-transform: uppercase;
+        transition: 0.5s;
+    }
+    &__link:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+        color: #fff700;
+        text-shadow: 1px 1px 1px #000;
+    }
+    &__phone{
+        color: #202020;
+        font-family: Roboto;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        transition: 0.4s;
+        margin-left: 26px;
+    }
+    &__phone:hover{
+        cursor: pointer;
+        color: red;
+    }
+    
+    &__text{
+        margin-top: 3px;
+        margin-left: 10px;
+        color: #7D808A;
+        font-family: Roboto;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        transition: 0.4s;
+        animation: phonetext 2s linear infinite alternate;
+        transform: translateY(-2px);
+    }
+    @keyframes phonetext{
+        0%{
+            transform: scale(0.7);
+            color: rgb(4, 209, 209);
+        }
+        50%{
+            color: coral;
+        }
+        100%{
+            transform: scale(0.9);
+            color: #646464;
+        }
+    }
+    &__input{
+        display: none;
+    }
+    &__mobile-line{
+        display: none;
+    }
+    &__mobile-txt{
+        display: none;
+    }
+}
+.block-info{
+    max-width: $width;
+    margin: 0 auto;
+    display: flex;
+
+    &__right{
+        max-width: 300px;
+    }
+    &__left__title{
+        margin-top: 10px;
+        font-family: Philosopher;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 34px;
+        transition: 0.4s;
+    }
+    &__left__title:hover{
+        cursor: pointer;
+        color: coral;
+        text-shadow: 1px 1px 1px #000;
+    }
+    &__left__text{
+        color: #646464;
+        font-family: Alegreya Sans;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        transition: 0.4s;
+        margin-top: 10px;
+    }
+    &__left__text:hover{
+        cursor: pointer;
+        color: gold;
+        text-shadow: 1px 1px 1px #000;
+        letter-spacing: 1px;
+    }
+    &__left__button{
+        position: relative;
+        width: 170px;
+        height: 40px;
+        font-family: Philosopher;
+        font-weight: 700;
+        background: linear-gradient( 180deg, #ffe100 0%, #fff700 100%);
+        margin-top: 26px;
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 26px;
+        text-align: center;
+        border-radius: 5px;
+        letter-spacing: 1.05px;
+        text-transform: uppercase;
+        overflow: hidden;
+        color: #6A5300;
+        transition: 0.5s;
+    } 
+    &__left__button:hover{
+        cursor: pointer;
+    }
+    &__left__button::after{
+        position: absolute;
+        content: '';
+        width: 200px;
+        height: 100px;
+        filter: blur(30px);
+        background-color: rgba(255, 255, 255, 0.81); 
+        border-radius: 50%;
+        top: -90px;
+        left: 0;
+    }
+    &__left__button::before{
+        position: absolute;
+        content: '';
+        width: 25%;
+        height: 4px;
+        background-color: aqua;
+        border-radius: 5px;
+        left: -10px;
+        bottom: 0;
+        animation: buttonbefore 5s linear infinite;
+    }
+    @keyframes buttonbefore{
+        0%{
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+        50%{
+            background-color: orangered;
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(200px);
+        }
+    }
+    &__right{
+        transform: scale(0.8);
+    }
+}
+.svg{
+    transition: 0.5s;
+    transform: translateY(18px) translateX(13px);
+}
+.svg:hover{
+    cursor: pointer;
+}
+.section-about{
+    max-width: $width;
+    margin: 0 auto;
+
+    &__title{
+        text-align: center;
+        color: #363434;
+        font-family: Philosopher;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 36px;
+        transition: 0.5s;
+    }
+    &__title:hover{
+        cursor: pointer;
+        color: coral;
+        text-shadow: 1px 1px 1px #000;
+        transform: scale(1.1);
+    }
+    &__block{
+        display: flex;
+        align-items: center;
+    }
+    &__inside{
+        width: 248px;
+        margin: 10px auto;
+    }
+    &__box{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__inside-number{
+        color: #008139;
+        font-family: Philosopher;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; 
+        transition: 0.5s;
+    }
+    &__inside-number:hover{
+        cursor: pointer;
+        letter-spacing: 3px;
+    }
+    &__image{
+    max-width: 365px;
+    height: 250px;
+    margin-left: -30px;
+    }
+    &__inside-txt{
+    color: #0B0B0B;
+    font-family: Roboto;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    transition: 0.5s;
+    }
+    &__inside-txt:hover{
+        cursor: pointer;
+        color: rgb(1, 134, 192);
+    }
+
+    &__text{
+        color: #7E7E7E;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        transition: 0.5s;
+        text-align: center;
+        margin-top: 10px;
+    }
+    &__text:hover{
+        cursor: pointer;
+        color: darkorange;
+    }
+    &__image:hover{
+        cursor: pointer;
+    }
+}
+.section2{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+
+    &__block{
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__block-title{
+        color: #0B0B0B;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding: 8px 0;
+        transition: 0.5s;
+    }
+    &__block-title:hover{
+        cursor: pointer;
+        color: #e20000;
+    }
+    &__block-txt{
+        color: #7E7E7E;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 151.7%;
+        transition: 0.5s;
+    }
+    &__block-txt:hover{
+        cursor: pointer;
+        color: cadetblue;
+    }
+    &__block-img{
+        transition: 0.5s;
+    }
+    &__block-img:hover{
+        cursor: pointer;
+        transform: translateY(-20px);
+    }
+}
+.main__title2{
+    text-align: center;
+    padding: 65px 0 0 0;
+    color: #363434;
+    font-family: Philosopher;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    transition: 0.5s;
+}
+.main__title3{
+    text-align: center;
+    padding: 10px 0 25px 0;
+    color: #363434;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    transition: 0.5s;
+}
+.main__title2:hover{
+    cursor: pointer;
+    color: #008139;
+    transform: scale(1.1);
+}
+.main__title3:hover{
+    cursor: pointer;
+    color: #ffe100;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.section3{
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(./images/Газон\ 1.png);
+    background-size: cover;
+
+    &__block{
+        width: 240px;
+        border-radius: 5px;
+        border: 1px solid #EAEAEA;
+        background: #FFF;
+        box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.07);
+        margin: 30px auto;
+        padding: 0 30px 50px 30px;
+        flex-direction:column ;
+        align-items: center;
+        height: 290px;
+    }
+
+    &__block-line{
+        width: 24px;
+        height: 1px;
+        background-color: #008139;
+        margin-bottom: 3px;
+        margin: 7px auto;
+        transition: 0.6s;
+    }
+    &__block-line:hover{
+        cursor: pointer;
+        transform: scaleX(5.5);
+        background-color: #e20000;
+    }
+    &__block-txt{
+        color: #7E7E7E;
+        font-family: Roboto;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 400;
+        margin: 2px auto;
+        line-height: 12px;
+        text-align: center;
+        transition: 0.5s;
+    }
+    &__block-txt:hover{
+        cursor: pointer;
+        color: cadetblue;
+    }
+    &__block-title{
+        margin: 5px auto;
+        color: #363434;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        transition: 0.5s;
+    }
+    &__block-title:hover{
+        cursor: pointer;
+        color: coral;
+        transform: translateY(-2px);
+    }
+    &__block-img{
+        transform: translateY(-15px);
+        width: 210px;
+        height: 180px;
+        transition: 0.5s;
+    }
+    &__block-img:hover{
+        cursor: pointer;
+        transform: translateY(-30px);
+    }
+    &__block-button{
+        position: relative;
+        width: 170px;
+        height: 40px;
+        font-family: Philosopher;
+        font-weight: 700;
+        background: linear-gradient( 180deg, #ffe100 0%, #fff700 100%);
+        margin: 30px auto;
+        transform: translateY(-25px);
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: center;
+        border-radius: 5px;
+        letter-spacing: 1.05px;
+        text-transform: uppercase;
+        overflow: hidden;
+        color: #6A5300;
+        transition: 0.5s;
+    }
+
+    &__block-button::before{
+        position: absolute;
+        content: '';
+        width: 25%;
+        height: 4px;
+        background-color: aqua;
+        border-radius: 5px;
+        left: -10px;
+        bottom: 0;
+        animation: buttonbefore 5s linear infinite;
+    }
+    &__clouds{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 2165px;
+        height: 100px;
+        animation: clouds 2s linear infinite alternate;
+    }
+    @keyframes clouds{
+        0%{
+            transform: translateY(5px);
+        }
+        100%{
+            transform: translateY(-5px);
+        }
+    }
+    &__boyandhorse{
+        position: absolute;
+        right: 0;
+        transform: scale(0.35);
+        top: 1890px;
+        right: 20px;
+    }
+    &__womanandhorse{
+        position: absolute;
+        left: 80px;
+        transform: scale(0.35);
+        top: 1890px;
+    }
+}
+
+/* ----------------- ADAPTIVE -----------------*/
+
+@media (max-width: 1199px) {
+    .header{
+
+        &__nav{
+            margin-left: 0;
+        }
+    }
+    .fullscreen{
+        background: url(./images/фон\ 1.png);
+        background-size: cover;
+        height: 100vh;
+        overflow: hidden;
+
+    &__sky{
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        width: 100%;
+        animation: sky 2s linear infinite alternate;
+    }
+    &__lefttrees{
+        position: absolute;
+        left: -300px;
+        top: 5px;
+        transform: scale(0.3);
+    }
+    &__leftbush{
+        display: none;
+    }
+    &__ambar{
+        position: absolute;
+        top: 140px;
+        left: -160px;
+        transform: scale(0.2);
+    }
+    &__horse{
+        position: absolute;
+        top: 110px;
+        transform: scale(0.2);
+        left: 165px;
+    }
+    &__rigthbushes{
+        display: none;
+    }
+    &__birds{
+        display: none;
+    }
+}
+} 
+@media (max-width: 991px){
+    .fullscreen{
+        background: url(./images/фон\ 1.png);
+        background-size: cover;
+        height: 100vh;
+        overflow: hidden;
+
+    &__sky{
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        width: 100%;
+        animation: sky 2s linear infinite alternate;
+    }
+    &__lefttrees{
+        position: absolute;
+        left: -300px;
+        top: 5px;
+        transform: scale(0.3);
+    }
+    &__leftbush{
+        display: none;
+    }
+    &__ambar{
+        position: absolute;
+        top: 140px;
+        left: -160px;
+        transform: scale(0.2);
+    }
+    &__horse{
+        position: absolute;
+        top: 110px;
+        transform: scale(0.2);
+        left: 165px;
+    }
+    &__rigthbushes{
+        display: none;
+    }
+    &__birds{
+        display: none;
+    }
+}
+}
+@media (max-width: 767px){
+    .header{
+
+        &__nav{
+            display: none;
+        }
+        &__info{
+            display: none;
+        }
+        &__mobile-line{
+            position: relative;
+            display: block;
+            width: 10px;
+            height: 2px;
+            background-color: #008139;
+        }
+        &__mobile-line:after{
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 2px;
+            background-color: #008139;
+            top: 5px;
+        }
+        &__mobile-line:before{
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 2px;
+            background-color: #008139;
+            top: 10px;
+        }
+        &__mobile-txt{
+            display: block;
+            color: #202020;
+            font-family: Roboto;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 15px; /* 100% */
+        }
+        &__input__btn{
+            display: flex;
+            justify-content: space-around;
+            width: 77px;
+            height: 29px;
+            padding: 7px;
+            border-radius: 3px;
+            border: 1px solid #008139;
+        }
+    }
+}
